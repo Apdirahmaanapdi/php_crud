@@ -8,9 +8,10 @@ $row = mysqli_fetch_assoc($result);
 if (isset($_POST['update'])) {
     $name = $_POST['name'];
     $email = $_POST['email'];
+    $phone = $_POST['phone']; // Lagu daray
 
-    mysqli_query($conn, "UPDATE users SET name='$name', email='$email' WHERE id=$id");
-    header("Location: index.php");
+    mysqli_query($conn, "UPDATE users SET name='$name', email='$email', phone='$phone' WHERE id=$id");
+    header("Location: view.php");
 }
 ?>
 
@@ -24,15 +25,18 @@ if (isset($_POST['update'])) {
 
 <form method="POST">
     <h2>Edit User</h2>
-    <label>Name:</label>
+    <label>Magaca:</label>
     <input type="text" name="name" value="<?= $row['name']; ?>" required>
     
     <label>Email:</label>
     <input type="email" name="email" value="<?= $row['email']; ?>" required>
+
+    <label>Phone:</label>
+    <input type="text" name="phone" value="<?= $row['phone']; ?>" required>
     
-    <button name="update">Update User</button>
+    <button name="update" class="btn-save">Update User</button>
     <br><br>
-    <a href="index.php" style="display:block; text-align:center; font-weight:normal;">Cancel</a>
+    <a href="view.php" style="display:block; text-align:center;">Cancel</a>
 </form>
 
 </body>

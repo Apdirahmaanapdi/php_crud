@@ -12,12 +12,12 @@
 <a href="index.php" class="btn-add">&larr; Ku noqo Diiwaangelinta</a>
 
 <div class="table-container">
-    <table cellpadding="10">
+    <table>
     <tr>
         <th>ID</th>
         <th>Magaca</th>
         <th>Email</th>
-        <th>Action</th>
+        <th>Phone</th> <th>Action</th>
     </tr>
 
     <?php
@@ -28,13 +28,12 @@
         <td><?= $row['id']; ?></td>
         <td><?= $row['name']; ?></td>
         <td><?= $row['email']; ?></td>
-        <td class="action-links">
+        <td><?= $row['phone']; ?></td> <td class="action-links">
             <a href="edit.php?id=<?= $row['id']; ?>" class="btn-edit">Edit</a>
-            <a href="delete.php?id=<?= $row['id']; ?>" class="btn-delete" onclick="return confirm('Ma hubtaa inaad tirtirto?');">Delete</a>
+            <a href="delete.php?id=<?= $row['id']; ?>" class="btn-delete" onclick="return confirm('Ma hubtaa?');">Delete</a>
         </td>
     </tr>
     <?php } ?>
-
     </table>
 </div>
 
